@@ -1,0 +1,53 @@
+{
+  "name": "@zendesk/zendesk-app-scaffold-tools",
+  "version": "1.0.0",
+  "author": "Zendesk",
+  "description": "This package includes scripts and configuration used by Zendesk's App Scaffold. Please refer to its documentation.",
+  "repository": "",
+  "license": "",
+
+  "keywords": [ "zendesk", "official-apps", "scripts" ],
+  "engines": { "node": ">=6.11.5" },
+  "bugs": { "url": "https://github.com/zendesk/app_scaffold" },
+  "files": [ "bin", "config", "scripts" ],
+  "bin": { "zendesk-app-scripts": "./bin/zendesk-app-scripts.js" },
+  "main": "./scripts/exports",
+
+  "scripts": {
+    "test": "jest"
+  },
+
+  "jest": {
+    "verbose": true,
+    "collectCoverage": false,
+    "testRegex": "(/specs?/)\\.spec\\."
+  },
+
+  "dependencies": {
+    "@babel/core": "^7.4.3",
+    "@babel/preset-env": "^7.4.3",
+    "babel-loader": "^8.0.5",
+    "chalk": "^2.4.2",
+    "clean-webpack-plugin": "^2.0.1",
+    "copy-webpack-plugin": "^5.0.2",
+    "cross-spawn": "^6.0.5",
+    "css-loader": "^2.1.1",
+    "html-webpack-plugin": "^3.2.0",
+    "meow": "^5.0.0",
+    "mini-css-extract-plugin": "^0.6.0",
+    "postcss-import": "^12.0.1",
+    "postcss-loader": "^3.0.0",
+    "postcss-preset-env": "^6.6.0",
+    "precss": "^4.0.0",
+    "webpack": "^4.30.0",
+    "webpack-cli": "^3.3.0",
+    "webpack-merge": "^4.2.1"
+  },
+
+  "devDependencies": {
+    "babel-jest": "^24.7.1",
+    "jest": "^24.7.1",
+    "standard": "^11.0.1",
+    "webpack-bundle-analyzer": "^3.3.2"
+  }
+}
