@@ -1,5 +1,4 @@
 #!/usr/bin/env node
-
 'use strict'
 
 const meow = require('meow')
@@ -21,11 +20,13 @@ const cli = meow(`
       build [--dev],              Run build in production/development mode
 `)
 
-const { input: [option], flags } = cli
+let { input: [option], flags } = cli
 
 switch (option) {
   case 'start':
   case 'build':
+  case 'lint':
+  case 'stats':
   case 'test': {
     const scriptPath = require.resolve('../scripts/' + option)
     const task = require(scriptPath)
@@ -39,7 +40,7 @@ switch (option) {
   }
   default:
     // Options not supported yet
-    console.log(`${chalk.yellow('warning:')} Option "${chalk.bold(option)}" not found.`)
+    console.error(`${chalk.yellow('warning:')} Option "${chalk.bold(option)}" not found.`)
     cli.showHelp()
     break
 }
